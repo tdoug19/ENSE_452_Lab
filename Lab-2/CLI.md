@@ -26,3 +26,28 @@ CLI.  One useful exercise will incorporate LED control into your CLI.
 At each step of the development, we will be paying attention to good
 software design principles.
 
+
+## Procedure
+
+### Project Setup
+- Create a new Lab2 subdirectory inside your repository on your local machine.
+- Start the STM32CubeIDE software and create a new STM32 project
+- Search and Select our Nucleo-64 board.
+- Initiate all peripherals with their default mode.
+- Use the graphical tool to enable USART2.  This is the USB connection between the board and the host.  Notice in the schematic that this USART2 connects to the PC through the ST-Link.  This allows us communication between the board and PC.
+- Save the project and generate all the setup code.
+
+
+### Phase 1: Get the Serial Port Working
+There are a number of ways to communicate with the board via the serial link.  The first way we will investigate is polling mode.  Investigate the following two HAL functions found in 39.2.1 of the HAL document under Polling mode IO operation:
+
+<details>
+
+
+
+```C
+   HAL_USART_Transmit()
+   HAL_USART_Receive()
+
+```
+</details>
