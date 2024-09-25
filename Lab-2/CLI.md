@@ -37,8 +37,8 @@ There are a number of ways to communicate with the board via the serial link.  T
 
 
 ```C
-   HAL_USART_Transmit()
-   HAL_USART_Receive()
+   HAL_UART_Transmit()
+   HAL_UART_Receive()
 
 ```
 </details>
