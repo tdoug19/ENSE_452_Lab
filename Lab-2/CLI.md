@@ -52,6 +52,7 @@ The CLI should print some sort of prompt.  Blank lines merely repeat the prompt.
 - Query the state of the LED.
 - "help" should print a screen of help explaining the commands.
 
+The CLI should be in its own files such as cli.c and cli.h.  This section of code should implement the CLI entity.
 
 ### What To Submit
 On URCourses put the link to your git repository in the submission link.  The TA will checkout the version (date) submitted at the deadline.  
