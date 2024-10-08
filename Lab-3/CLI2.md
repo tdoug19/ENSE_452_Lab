@@ -30,6 +30,13 @@ Another good one for this lab is to create a scroll window:
 - Start the STM32CubeIDE software and create a new STM32 project.
 - Search and Select our Nucleo-64 board.
 - Initiate all peripherals with their default mode.
+- Enable the 
+
+<table>
+  <tr>
+    <td> <img src="UsartInterrupt.png"  alt="UsartInterrupt" width = 1202px height = 888px ></td>
+  </tr>
+</table>
 - Save the project and generate all the setup code.
 
 ### Create the new CLI interface
