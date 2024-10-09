@@ -42,6 +42,30 @@ Another good one for this lab is to create a scroll window:
 
 ### Use the non-blocking transmit and receive functions
 
+## Transmit
+
+HAL_StatusTypeDef HAL_UART_Transmit_IT(UART_HandleTypeDef *huart, <error-type> *pData, <error-type> Size)
+Sends an amount of data in non blocking mode.
+
+Parameters:
+huart – Pointer to a UART_HandleTypeDef structure that contains the configuration information for the specified UART module.
+pData – Pointer to data buffer (u8 or u16 data elements).
+Size – Amount of data elements (u8 or u16) to be sent
+
+Return values:
+HAL status
+
+
+ex:
+
+// wait until uart is ready for transmit
+while((HAL_UART_GetState(&huart2)&HAL_UART_STATE_BUSY_TX)==HAL_UART_STATE_BUSY_TX);
+// transmit the buffer
+HAL_UART_Transmit_IT(&huart2,(uint8_t*) buffer, len);
+
+
+
+
 ### Create the new CLI interface
 Using the information in the videos and handout, create a CLI that has a status window that displays the status information for the board. It is up to you how you want to provide that information to the user but of course the cleaner and more concise the better. The command scroll window should appear below this window and provide a command prompt for the user to submit requests. This status window should be periodically updated using a timer feature. If a command comes in it should be acted on and the status window updated immediately.
 
