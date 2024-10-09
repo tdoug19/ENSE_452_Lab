@@ -42,7 +42,7 @@ Another good one for this lab is to create a scroll window:
 
 ### Use the non-blocking transmit and receive functions
 
-## Transmit
+#### Transmit
 
 HAL_StatusTypeDef HAL_UART_Transmit_IT(UART_HandleTypeDef *huart, <error-type> *pData, <error-type> Size)
 Sends an amount of data in non blocking mode.
@@ -63,7 +63,46 @@ while((HAL_UART_GetState(&huart2)&HAL_UART_STATE_BUSY_TX)==HAL_UART_STATE_BUSY_T
 // transmit the buffer
 HAL_UART_Transmit_IT(&huart2,(uint8_t*) buffer, len);
 
+#### Receive
 
+HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, <error-type> *pData, <error-type> Size)
+Receives an amount of data in non blocking mode.
+
+Parameters:
+huart – Pointer to a UART_HandleTypeDef structure that contains the configuration information for the specified UART module.
+pData – Pointer to data buffer (u8 or u16 data elements).
+Size – Amount of data elements (u8 or u16) to be received.
+
+Return values:
+HAL status
+
+ex:
+// wait until status is ok
+while((HAL_UART_GetState(&huart2)&HAL_UART_STATE_BUSY_RX)==HAL_UART_STATE_BUSY_RX); 
+//Listen for the interrupt and buffer one character at a time.
+HAL_UART_Receive_IT(&huart2,(uint8_t*)RXBuffer,1);
+
+
+
+//The callback or Interrupt Service Routine
+
+/**
+  * @brief process a receiving character from USART
+  *        The goal is to keep the function as fast as possible and to delegate the slow tasks like transmission
+  *        to the main to increase the availability of the function to serve the next interrupt
+  * @param huart:  handler to USART2 ( the only used one - no need to check)
+  * @retval None
+  * @note : RXBuffer[0]: Received character in
+  *	      : TXBuffer   : the pattern to be sent responding to the received character
+  *	      : TXlen 	   : contains the pattern length
+  *	      : commandExec: flag to indicate that a command is ready to be processed
+  *	      : readagain  : flag to tell the main memory to recall the non-blocking USART receiving function again
+  */
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+
+
+}
 
 
 ### Create the new CLI interface
