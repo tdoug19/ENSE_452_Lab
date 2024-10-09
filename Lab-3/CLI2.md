@@ -77,15 +77,24 @@ Return values:
 HAL status
 
 ex:
+<details>
+
+```C
 // wait until status is ok
 while((HAL_UART_GetState(&huart2)&HAL_UART_STATE_BUSY_RX)==HAL_UART_STATE_BUSY_RX); 
 //Listen for the interrupt and buffer one character at a time.
 HAL_UART_Receive_IT(&huart2,(uint8_t*)RXBuffer,1);
 
+```
+</details>
+
 
 
 //The callback or Interrupt Service Routine
 
+<details>
+
+```C
 /**
   * @brief process a receiving character from USART
   *        The goal is to keep the function as fast as possible and to delegate the slow tasks like transmission
@@ -103,6 +112,10 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 
 
 }
+
+```
+</details>
+
 
 
 ### Create the new CLI interface
