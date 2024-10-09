@@ -77,7 +77,7 @@ Return values:
 HAL status
 
 ex:
-<details>
+
 
 ```C
 // wait until status is ok
@@ -86,7 +86,7 @@ while((HAL_UART_GetState(&huart2)&HAL_UART_STATE_BUSY_RX)==HAL_UART_STATE_BUSY_R
 HAL_UART_Receive_IT(&huart2,(uint8_t*)RXBuffer,1);
 
 ```
-</details>
+
 
 
 
