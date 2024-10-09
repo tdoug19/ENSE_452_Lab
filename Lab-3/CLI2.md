@@ -87,12 +87,7 @@ HAL_UART_Receive_IT(&huart2,(uint8_t*)RXBuffer,1);
 
 ```
 
-
-
-
-//The callback or Interrupt Service Routine
-
-<details>
+The callback or Interrupt Service Routine
 
 ```C
 /**
@@ -114,15 +109,12 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 }
 
 ```
-</details>
-
-
 
 ### Create the new CLI interface
 Using the information in the videos and handout, create a CLI that has a status window that displays the status information for the board. It is up to you how you want to provide that information to the user but of course the cleaner and more concise the better. The command scroll window should appear below this window and provide a command prompt for the user to submit requests. This status window should be periodically updated using a timer feature. If a command comes in it should be acted on and the status window updated immediately.
 
 ### Tagging
-In the lab I demonstrated tagging. There is also some references in URCourses. Please tag your assignment as Lab3Submission. Make sure this gets pushes to the remote.
+On URCourses there is a reference for tagging your commits.  This makes looking at your commits easier to read and checkout. Please tag your assignment as Lab3Submission.  Make sure this gets pushed to the remote.
 
 ## What To Submit
 Nothing! Just make sure to use your repository accordingly.
