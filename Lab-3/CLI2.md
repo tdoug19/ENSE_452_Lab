@@ -96,11 +96,6 @@ The callback or Interrupt Service Routine
   *        to the main to increase the availability of the function to serve the next interrupt
   * @param huart:  handler to USART2 ( the only used one - no need to check)
   * @retval None
-  * @note : RXBuffer[0]: Received character in
-  *	      : TXBuffer   : the pattern to be sent responding to the received character
-  *	      : TXlen 	   : contains the pattern length
-  *	      : commandExec: flag to indicate that a command is ready to be processed
-  *	      : readagain  : flag to tell the main memory to recall the non-blocking USART receiving function again
   */
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
