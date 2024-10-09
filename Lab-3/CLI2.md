@@ -30,14 +30,17 @@ Another good one for this lab is to create a scroll window:
 - Start the STM32CubeIDE software and create a new STM32 project.
 - Search and Select our Nucleo-64 board.
 - Initiate all peripherals with their default mode.
-- Enable the 
+- Enable the USART2 global interrupt.
 
 <table>
   <tr>
-    <td> <img src="UsartInterrupt.png"  alt="UsartInterrupt" width = 1202px height = 888px ></td>
+    <td> <img src="UsartInterrupt.png"  alt="UsartInterrupt" width = 902px height = 666px ></td>
   </tr>
 </table>
+
 - Save the project and generate all the setup code.
+
+### Use the non-blocking transmit and receive functions
 
 ### Create the new CLI interface
 Using the information in the videos and handout, create a CLI that has a status window that displays the status information for the board. It is up to you how you want to provide that information to the user but of course the cleaner and more concise the better. The command scroll window should appear below this window and provide a command prompt for the user to submit requests. This status window should be periodically updated using a timer feature. If a command comes in it should be acted on and the status window updated immediately.
